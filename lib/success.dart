@@ -18,10 +18,12 @@ class Success extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.pushReplacementNamed(context, '/home');
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text("Successfully Logged Out")),
               );
+              Future.delayed(Duration(seconds: 1), () {
+                Navigator.pushReplacementNamed(context, '/home');
+              });
             },
             icon: Icon(Icons.logout),
           ),
