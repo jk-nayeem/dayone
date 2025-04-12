@@ -109,6 +109,11 @@ class _HomepageState extends State<Homepage> {
                   } else {
                     warning("Password");
                   }
+                } else if (_usernameController.text == "" &&
+                    _passwordController.text == "") {
+                  ScaffoldMessenger.of(
+                    context,
+                  ).showSnackBar(SnackBar(content: Text("Can Not be Blank")));
                 } else {
                   warning("Username");
                 }
